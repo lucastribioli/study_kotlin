@@ -7,8 +7,8 @@ fun main(args: Array<String>) {
    val salarios = bigDecimalArrayOf("100.03", "444343.888", "60000")
 //    println(salarios.contentToString())
 
-    addAumentoSalario(salarios)
-
+//    addAumentoSalario(salarios)
+    println(salarios.somatoria())
 }
 
 fun testesArraysInt(){
@@ -53,5 +53,11 @@ fun addAumentoSalario(salarios: Array<BigDecimal>){
         .toTypedArray()
 
     println(salariosComAumento.contentToString())
+}
+
+fun Array<BigDecimal>.somatoria(): BigDecimal{
+    return this.reduce {acumulador, valor ->
+        acumulador + valor
+    }
 }
 
