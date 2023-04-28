@@ -4,11 +4,12 @@ import java.math.RoundingMode
 fun main(args: Array<String>) {
 //    testesArraysInt()
 //    testesArraysDouble()
-   val salarios = bigDecimalArrayOf("100.03", "444343.888", "60000")
+    val salarios = bigDecimalArrayOf("100.03", "444343.888", "60000")
 //    println(salarios.contentToString())
 
 //    addAumentoSalario(salarios)
     println(salarios.somatoria())
+
 }
 
 fun testesArraysInt(){
@@ -34,12 +35,6 @@ fun testesArraysDouble(){
     println(salarios.contentToString())
 }
 
-fun bigDecimalArrayOf(vararg valores: String): Array<BigDecimal>{
-    return Array<BigDecimal>(valores.size){i ->
-            valores[i].toBigDecimal()
-    }
-}
-
 fun addAumentoSalario(salarios: Array<BigDecimal>){
     val aumento = "1.1".toBigDecimal()
     val salariosComAumento = salarios
@@ -55,9 +50,6 @@ fun addAumentoSalario(salarios: Array<BigDecimal>){
     println(salariosComAumento.contentToString())
 }
 
-fun Array<BigDecimal>.somatoria(): BigDecimal{
-    return this.reduce {acumulador, valor ->
-        acumulador + valor
-    }
-}
+
+
 
